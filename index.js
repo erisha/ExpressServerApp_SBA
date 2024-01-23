@@ -14,18 +14,17 @@ const port = 3000;
     console.log(`[${new Date().toISOString()}] ${req.method} ${req.url}`);
     next();
  });
+//error handling
+ app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).send('Something went wrong')
+ });
 
- 
 
 // Routes
 app.use('/users', userRoutes);
 app.use('/posts', postRoutes);
 app.use('/comments', commentRoutes);
-
-
-
-
-
 
 
 

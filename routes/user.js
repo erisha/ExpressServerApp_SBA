@@ -4,7 +4,7 @@ const router = express.Router();
 // GET 
 router.get('/', (req,res) => res.json(users));
 
-// POST - create user
+// POST - create user  /users
 router.post('/', (req, res) => {
     const newUser = req.body;
     users.push(newUser);
